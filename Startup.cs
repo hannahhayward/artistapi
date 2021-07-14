@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using artistapi.Services;
 
 namespace artistapi
 {
@@ -32,6 +33,7 @@ namespace artistapi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "artistapi", Version = "v1" });
             });
+            services.AddTransient<ArtService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
